@@ -14,19 +14,8 @@ import com.grupo6.autentificacion.model.Usuario;
 import com.grupo6.autentificacion.repository.UsuarioRepository;
 
 @RestController
-@RequestMapping("/api/v1/autenticacion")
+@RequestMapping("/api/v3/autenticacion")
 public class AutenticacionController {
-
-    /*@Autowired
-    private AutenticacionService autenticacionService;
-
-    @PostMapping("/login")
-    public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request){
-        
-        String token = autenticacionService.login(request.getNombreUsuario(), request.getContrasena());
-        return ResponseEntity.ok(new AuthResponse(token)); // Devuelve el token en la respuesta
-    }*/
-
 
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -48,14 +37,3 @@ public class AutenticacionController {
     }
 
 }
-
-    /*@Data // Genera getters/setters en la clase
-    class LoginRequest {
-    private String nombreUsuario; // Nombre de usuario enviado desde cliente
-    private String contrasena;    // Contraseña enviada desde cliente
-    }
-
-    @Data
-    class AuthResponse {
-    private final String token; // Token que recibe el cliente
-    }*/
