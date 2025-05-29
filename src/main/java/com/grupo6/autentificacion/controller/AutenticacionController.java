@@ -14,13 +14,13 @@ import com.grupo6.autentificacion.model.Usuario;
 import com.grupo6.autentificacion.repository.UsuarioRepository;
 
 @RestController
-@RequestMapping("/api/v3/autenticacion")
+@RequestMapping("/api/v1/autenticacion")
 public class AutenticacionController {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    @PostMapping("/login2")
+    @PostMapping("/login")
     public ResponseEntity<String> login2(@RequestBody LoginRequest request) {
 
         Optional<Usuario> usuarioOpt = usuarioRepository.findByNombreUsuario(request.getNombreUsuario());
